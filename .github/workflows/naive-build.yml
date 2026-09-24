@@ -1,8 +1,13 @@
+name: Build
+
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
 
-windows:
-  runs-on: windows-2022
+jobs:
+  windows:
+    runs-on: windows-2022
   env:
     SCCACHE_ARM64_VERSION: 0.12.0
   strategy:
